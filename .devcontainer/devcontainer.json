@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {}
   },
-  "postCreateCommand": "npm install && npm install -g @anthropic-ai/claude-code",
+  "postCreateCommand": "npm install && npm install -g @anthropic-ai/claude-code && bash .codespaces/setup-claude.sh",
   "postStartCommand": "npm run dev &",
   "postAttachCommand": "bash .codespaces/welcome.sh",
   "forwardPorts": [3000],

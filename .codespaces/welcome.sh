@@ -13,6 +13,11 @@ RED='\033[38;2;239;68;68m'
 BOLD='\033[1m'
 RESET='\033[0m'
 
+# Close the sidebar and other panels programmatically
+code --command workbench.action.closeSidebar 2>/dev/null &
+code --command workbench.action.closePanel 2>/dev/null &
+sleep 0.5
+
 clear
 
 echo ""
@@ -62,10 +67,8 @@ fi
 echo ""
 echo -e "  ${DIM}──────────────────────────────────────${RESET}"
 echo ""
-echo -e "  ${WHITE}${BOLD}To start building, type:${RESET}"
+echo -e "  ${WHITE}${BOLD}Launching Claude Code...${RESET}"
 echo ""
-echo -e "    ${ORANGE}${BOLD}claude${RESET}"
-echo ""
-echo -e "  ${DIM}Tell it what you want to build.${RESET}"
-echo -e "  ${DIM}It will write the code for you.${RESET}"
-echo ""
+
+# Auto-launch Claude Code so students don't need to type anything
+claude
