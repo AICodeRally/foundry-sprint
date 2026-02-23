@@ -1,10 +1,68 @@
 {
   "workbench.colorTheme": "Default Dark Modern",
+
+  "workbench.activityBar.visible": false,
+  "workbench.sideBar.visible": false,
+  "workbench.editor.showTabs": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.tips.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.layoutControl.enabled": false,
+
+  "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
-  "editor.wordWrap": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.lineNumbers": "off",
+  "editor.folding": false,
+  "editor.glyphMargin": false,
+  "editor.renderLineHighlight": "none",
+  "breadcrumbs.enabled": false,
+
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorStyle": "line",
+
+  "window.commandCenter": false,
+  "window.title": "AI Code Rally — Foundry Sprint",
+
   "files.exclude": {
-    "node_modules": true
+    "node_modules": true,
+    ".devcontainer": true,
+    ".codespaces": true,
+    ".vscode": true,
+    ".gitignore": true,
+    ".env.example": true,
+    "tsconfig.json": true,
+    "next.config.ts": true,
+    "postcss.config.mjs": true,
+    "package.json": true,
+    "CLAUDE.md": true
   },
-  "workbench.startupEditor": "readme"
+
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#0a0a0a",
+    "titleBar.activeForeground": "#f97316",
+    "titleBar.inactiveBackground": "#0a0a0a",
+    "titleBar.inactiveForeground": "#666666",
+    "statusBar.background": "#f97316",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.noFolderBackground": "#f97316",
+    "terminal.background": "#0a0a0a",
+    "terminal.foreground": "#faf9f7",
+    "terminalCursor.foreground": "#f97316",
+    "terminal.ansiYellow": "#fbbf24",
+    "terminal.ansiBrightYellow": "#fbbf24",
+    "terminal.ansiCyan": "#06b6d4",
+    "terminal.ansiBrightCyan": "#06b6d4",
+    "terminal.ansiGreen": "#22c55e",
+    "terminal.ansiBrightGreen": "#22c55e",
+    "terminal.ansiRed": "#ef4444",
+    "terminal.ansiBrightRed": "#ef4444",
+    "panel.background": "#0a0a0a",
+    "panel.border": "#222222",
+    "editor.background": "#0a0a0a",
+    "editorGroupHeader.tabsBackground": "#0a0a0a",
+    "activityBar.background": "#0a0a0a",
+    "focusBorder": "#f97316"
+  }
 }
