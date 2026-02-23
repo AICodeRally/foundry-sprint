@@ -1,19 +1,40 @@
 # AI Code Rally — Foundry Sprint
 
+**One command. Then start building.**
+
+## Quick Start (Recommended)
+
+Open your terminal and run:
+
+```
+npx @aicoderally/foundry-sprint
+```
+
+This will:
+1. Download the starter project
+2. Install dependencies
+3. Start your app on http://localhost:3000
+4. Launch Claude Code — your AI builder
+
+**Prerequisites:**
+- [Node.js 18+](https://nodejs.org/)
+- An Anthropic API key — set it before running:
+  ```
+  export ANTHROPIC_API_KEY=sk-ant-...
+  ```
+
+## Alternative: GitHub Codespaces
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/AICodeRally/foundry-sprint?quickstart=1)
 
-**Click the badge above. That's it.**
-
-Your Codespace will open with:
-- A **terminal** where you talk to Claude (your AI builder)
-- A **preview panel** where you see your app
+Click the badge to launch a cloud environment with everything pre-configured.
 
 ## How It Works
 
-1. Click the badge to launch your Codespace
-2. Wait about 60 seconds for setup
-3. Type `claude` in the terminal
-4. Tell Claude what you want to build
+1. Run the command above (or open a Codespace)
+2. Tell Claude what you want to build
+3. Check http://localhost:3000 to see your app
+4. Keep iterating — describe changes, Claude builds them
 
 **Example things to say:**
 - "Build me a study planner for biology majors"
@@ -38,7 +59,7 @@ Claude writes all the code. You just describe what you want.
 
 1. **Be specific.** "Study planner for biology majors" beats "AI helper"
 2. **Iterate.** Ask Claude to change things until it feels right
-3. **Check the preview** after every change to see what happened
+3. **Check localhost:3000** after every change to see what happened
 4. **Practice your pitch.** Ask Claude to help you prepare for demo day
 
 ## Need Help?
