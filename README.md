@@ -1,97 +1,124 @@
-# Foundry Sprint - Starter Template
+# AICR Foundry Sprint - Starter Template
 
-This is your hackathon project. It is a working Next.js app pre-wired with the Anthropic Claude API. Your job is to turn it into something creative by editing **one file**: `lib/prompt.ts`.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/AICodeRally/foundry-sprint?quickstart=1)
 
-## Getting Started
+> Click the badge above to launch your development environment. No setup required.
+
+Your starting point for building an AI-powered app in a hackathon sprint.
+
+## Quick Start
 
 ### Option A: GitHub Codespace (Recommended)
 
-1. Click the green **Code** button on the repo, then **Codespaces > Create codespace on main**
-2. Wait for the container to build (about 2 minutes the first time)
-3. The dev server starts automatically on port 3000
-4. Open the forwarded port to see your app
+1. Click the **"Open in GitHub Codespaces"** badge above
+2. Wait for the container to build (about 60 seconds)
+3. The dev server starts automatically at port 3000
+4. Open the browser preview when prompted
+
+### Using Claude Code (Your AI Coding Assistant)
+
+Once your Codespace is running, type this in the terminal:
+
+```
+claude
+```
+
+That's it. Claude Code already knows about your project. Tell it what kind of app you want to build and it will help you modify the code.
+
+**Example prompts to try:**
+- "I want to build a study planner that creates weekly schedules"
+- "Make this into a resume bullet point generator"
+- "Help me build an app that summarizes legal contracts"
+
+Claude will start by modifying `lib/prompt.ts` — the file that controls your AI's personality and behavior.
 
 ### Option B: Local Development
 
 ```bash
+# Clone the repo
+git clone <your-repo-url>
+cd foundry-sprint
+
 # Install dependencies
 npm install
 
 # Copy the env file and add your API key
 cp .env.example .env.local
-# Edit .env.local and set ANTHROPIC_API_KEY=your-key-here
+# Edit .env.local and set ANTHROPIC_API_KEY
 
 # Start the dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000](http://localhost:3000) to see your app.
 
 ## What to Modify
 
-Open **`lib/prompt.ts`** — this is the only file you need to edit. It has two functions:
+### 1. Prompts (Start Here!)
 
-### `getSystemPrompt()`
+Open **`lib/prompt.ts`** — this is the most important file. It controls:
 
-Defines the AI's persona and behavior. This is where you tell Claude WHO it is.
+- **System Prompt**: Defines who your AI is and how it behaves
+- **User Prompt**: Defines how user input gets formatted before sending to the AI
 
-```ts
-// Example: Turn it into a code reviewer
-return 'You are a senior code reviewer. Analyze code for bugs, performance issues, and style problems. Be direct and specific.';
-```
+Change these two functions to transform the starter into YOUR app.
 
-### `getUserPrompt(input)`
+### 2. UI Components (Optional)
 
-Transforms the user's input before sending it to Claude. Add formatting, constraints, or context.
+- **`components/InputForm.tsx`** — The input area. Add more fields, dropdowns, or file upload.
+- **`components/OutputPanel.tsx`** — The output display. Format results as tables, lists, or cards.
+- **`app/page.tsx`** — The main page layout. Change the title and description.
 
-```ts
-// Example: Add structure to the response
-return `Review the following code and provide feedback in three sections:
-1. Bugs found
-2. Performance improvements
-3. Style suggestions
+### 3. API Route (Advanced)
 
-Code:
-${input}`;
-```
+- **`app/api/generate/route.ts`** — The backend. Adjust model parameters, add multi-step processing, or integrate other APIs.
 
-## Project Structure
+## How It Works
 
 ```
-lib/prompt.ts          <-- YOUR FILE (edit this!)
-app/page.tsx           <-- Main page (input + output panels)
-app/api/generate/      <-- API route (calls Claude)
-components/            <-- UI components
+User types input
+    |
+    v
+InputForm sends POST /api/generate
+    |
+    v
+route.ts calls Claude with your prompts from lib/prompt.ts
+    |
+    v
+OutputPanel displays the AI response
 ```
 
-## Track Ideas
+## Competition Tracks
 
-Here are some directions you can take your project:
+- **Campus AI** — Apps that solve problems for students, faculty, or campus life
+- **Startup AI** — Apps that could become a real product or business
+- **Replace the Intern** — Apps that automate tedious work tasks
 
-- **Code Tools** - Code reviewer, bug finder, refactoring assistant, test generator
-- **Writing** - Story generator, email composer, resume builder, tweet crafter
-- **Education** - Language tutor, math explainer, study guide maker, quiz generator
-- **Business** - Pitch coach, meeting summarizer, email responder, proposal writer
-- **Creative** - Poem generator, recipe inventor, game master, joke writer
-- **Analysis** - Data interpreter, pros/cons analyzer, research summarizer
+## Demo Requirements
 
-## Demo Day Tips
+- Working input/output (the app must produce real AI responses)
+- 3-minute demo limit (practice your pitch!)
+- Live demo (pre-recorded demos are not accepted)
+- Be ready to explain WHAT you changed in `lib/prompt.ts` and WHY
 
-- Have a clear 30-second pitch for what your app does
-- Show a live demo with a real example
-- Explain what makes your prompt engineering interesting
-- Mention any edge cases you handled
+## Tips for Winning
+
+1. **Pick a specific problem.** "AI study planner for biology majors" beats "general AI helper."
+2. **Nail the prompt engineering.** The difference between good and great is in `lib/prompt.ts`.
+3. **Show, don't tell.** Judges want to see a working demo, not slides.
+4. **Think about the user.** Who uses this? What's their workflow? Why is this better than ChatGPT?
+5. **Polish the output.** Format the AI response nicely. Use the OutputPanel to make it readable.
 
 ## Tech Stack
 
-- **Next.js 16** with App Router
-- **TypeScript** + **Tailwind CSS v4**
-- **Anthropic Claude API** (claude-sonnet-4-20250514)
+- [Next.js 16](https://nextjs.org) — React framework
+- [TypeScript](https://www.typescriptlang.org) — Type-safe JavaScript
+- [Tailwind CSS v4](https://tailwindcss.com) — Utility-first styling
+- [Anthropic Claude](https://docs.anthropic.com) — AI model API
 
-## Troubleshooting
+## Need Help?
 
-**"Failed to generate response"** - Check that your `ANTHROPIC_API_KEY` is set in `.env.local`
-
-**Port 3000 in use** - Run `npm run dev -- -p 3001` to use a different port
-
-**Types not working** - Run `npx tsc --noEmit` to check for TypeScript errors
+- Type `claude` in the terminal to get AI coding assistance
+- Ask your event organizers or mentors
+- Check the [Anthropic docs](https://docs.anthropic.com/en/docs/build-with-claude/overview)
+- Look at the example prompts in `lib/prompt.ts` for inspiration
