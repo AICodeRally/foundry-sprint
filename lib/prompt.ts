@@ -1,64 +1,43 @@
-// ╔══════════════════════════════════════════════════════════════════╗
-// ║                                                                  ║
-// ║   ████████╗██╗  ██╗██╗███████╗    ██╗███████╗                    ║
-// ║   ╚══██╔══╝██║  ██║██║██╔════╝    ██║██╔════╝                    ║
-// ║      ██║   ███████║██║███████╗    ██║███████╗                    ║
-// ║      ██║   ██╔══██║██║╚════██║    ██║╚════██║                    ║
-// ║      ██║   ██║  ██║██║███████║    ██║███████║                    ║
-// ║      ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝    ╚═╝╚══════╝                    ║
-// ║                                                                  ║
-// ║   ██╗   ██╗ ██████╗ ██╗   ██╗██████╗                            ║
-// ║   ╚██╗ ██╔╝██╔═══██╗██║   ██║██╔══██╗                           ║
-// ║    ╚████╔╝ ██║   ██║██║   ██║██████╔╝                           ║
-// ║     ╚██╔╝  ██║   ██║██║   ██║██╔══██╗                           ║
-// ║      ██║   ╚██████╔╝╚██████╔╝██║  ██║                           ║
-// ║      ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝                           ║
-// ║                                                                  ║
-// ║   ███████╗██╗██╗     ███████╗    ██╗                             ║
-// ║   ██╔════╝██║██║     ██╔════╝    ██║                             ║
-// ║   █████╗  ██║██║     █████╗      ██║                             ║
-// ║   ██╔══╝  ██║██║     ██╔══╝      ╚═╝                             ║
-// ║   ██║     ██║███████╗███████╗    ██╗                             ║
-// ║   ╚═╝     ╚═╝╚══════╝╚══════╝    ╚═╝                             ║
-// ║                                                                  ║
-// ║   Edit the two functions below to build your AI app.             ║
-// ║   Everything else is already wired up for you.                   ║
-// ║                                                                  ║
-// ╚══════════════════════════════════════════════════════════════════╝
+/**
+ * ╔══════════════════════════════════════════════════╗
+ * ║  THIS IS YOUR FILE — MODIFY THIS!               ║
+ * ║                                                  ║
+ * ║  Change the prompts below to build your AI app.  ║
+ * ║  The system prompt defines WHO your AI is.       ║
+ * ║  The user prompt defines HOW it processes input. ║
+ * ╚══════════════════════════════════════════════════╝
+ */
 
 /**
- * getSystemPrompt() — Defines WHO the AI is and HOW it should behave.
+ * The system prompt tells the AI who it is and how to behave.
+ * This is sent with every request and sets the personality/expertise.
  *
- * This is the "persona" of your AI. Change this to make the AI act
- * like anything you want: a chef, a tutor, a poet, a code reviewer,
- * a fitness coach, a travel guide, a therapist, a pirate...
- *
- * IDEAS:
- *   - "You are a senior code reviewer. Review code for bugs, style, and performance."
- *   - "You are a creative writing coach. Help users improve their stories."
- *   - "You are a meal planner. Create weekly meal plans based on dietary needs."
- *   - "You are a startup pitch coach. Give feedback on business pitches."
- *   - "You are a language tutor for Spanish. Teach through conversation."
- *   - "You are a debate partner. Argue the opposite side of any position."
+ * Examples:
+ * - "You are a study planner that creates weekly schedules based on course load..."
+ * - "You are a resume bullet point generator that turns job descriptions into achievements..."
+ * - "You are a contract summarizer that extracts key terms and obligations..."
+ * - "You are a meal prep assistant that generates grocery lists and recipes for the week..."
  */
 export function getSystemPrompt(): string {
-  return 'You are a helpful AI assistant. Respond clearly and concisely.';
+  return `You are a helpful AI assistant. Replace this with your own system prompt!
+
+Ideas:
+- "You are a study planner that creates weekly schedules based on course load..."
+- "You are a resume bullet point generator that turns job descriptions into achievements..."
+- "You are a contract summarizer that extracts key terms and obligations..."`;
 }
 
 /**
- * getUserPrompt(input) — Transforms the user's raw input before sending to AI.
+ * The user prompt wraps the user's input before sending it to the AI.
+ * Use this to add structure, instructions, or formatting to the request.
  *
- * The `input` parameter is whatever the user typed in the text box.
- * You can wrap it, add instructions, format it, or combine it with
- * other context to shape what the AI actually receives.
+ * The 'input' parameter is whatever the user typed in the text box.
  *
- * IDEAS:
- *   - Add format instructions: `Respond in bullet points: ${input}`
- *   - Add constraints: `In under 100 words, ${input}`
- *   - Add context: `Given that the user is a beginner, ${input}`
- *   - Parse structured input: split input by lines, treat first line as topic
- *   - Chain prompts: ask the AI to think step-by-step
+ * Examples:
+ * - Add format instructions: "Respond as a numbered list..."
+ * - Add context: "The user is a college student looking for..."
+ * - Add constraints: "Keep your response under 200 words..."
  */
 export function getUserPrompt(input: string): string {
-  return input;
+  return `Here is the user's request:\n\n${input}\n\nPlease respond helpfully.`;
 }
