@@ -1,6 +1,7 @@
 {
   "workbench.colorTheme": "Default Dark Modern",
 
+  "workbench.activityBar.location": "hidden",
   "workbench.activityBar.visible": false,
   "workbench.sideBar.visible": false,
   "workbench.editor.showTabs": "none",
@@ -8,6 +9,7 @@
   "workbench.tips.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.layoutControl.enabled": false,
+  "workbench.panel.opensMaximized": "always",
 
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
@@ -23,6 +25,7 @@
   "terminal.integrated.cursorStyle": "line",
 
   "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
   "window.title": "AI Code Rally — Foundry Sprint",
 
   "files.exclude": {
@@ -36,7 +39,9 @@
     "next.config.ts": true,
     "postcss.config.mjs": true,
     "package.json": true,
-    "CLAUDE.md": true
+    "package-lock.json": true,
+    "CLAUDE.md": true,
+    ".git": true
   },
 
   "workbench.colorCustomizations": {
